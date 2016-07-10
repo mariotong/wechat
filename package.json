@@ -1,0 +1,20 @@
+{
+  "name": "zhenglei",
+  "version": "1.0.0",
+  "description": "this is a project about wechat using koa",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bluebird": "^3.4.0",
+    "ejs": "^2.4.2",
+    "heredoc": "^1.3.1",
+    "koa": "^1.2.0",
+    "raw-body": "^2.1.6",
+    "request": "^2.72.0",
+    "sha1": "^1.1.1"
+  }
+}
