@@ -10,7 +10,7 @@ var tpl =heredoc(function(){
 		<CreateTime><%= createTime %></CreateTime>
 		<MsgType><![CDATA[<%= MsgType %>]]></MsgType>
 		<% if(MsgType==='text') { %>
-		<Content><![CDATA[<%= content %>]]></Content>
+		<Content><![CDATA[<%- content %>]]></Content>
 		<% } else if(MsgType ==='image') { %>
 		<Image>
 			<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
@@ -24,7 +24,7 @@ var tpl =heredoc(function(){
 			<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
 			<Title><![CDATA[<%= content.title %>]]></Title>
 			<Description><![CDATA[<%= content.description %>]]></Description>
-		</Video> 
+		</Video>
 		<% } else if(MsgType ==='music') { %>
 		<Music>
 			<Title><![CDATA[<%= content.title %>]]></Title>
@@ -38,7 +38,7 @@ var tpl =heredoc(function(){
 		<Articles>
 		<% content.forEach(function(item){ %>
 		<item>
-			<Title><![CDATA[<%= item.title %>]]></Title> 
+			<Title><![CDATA[<%= item.title %>]]></Title>
 			<Description><![CDATA[<%= item.description %>]]></Description>
 			<PicUrl><![CDATA[<%= item.picUrl %>]]></PicUrl>
 			<Url><![CDATA[<%= item.url %>]]></Url>
@@ -47,7 +47,7 @@ var tpl =heredoc(function(){
 		</Articles>
 		<% } %>
 	 </xml>
-   
+
 	*/
 })
 var compiled =ejs.compile(tpl)

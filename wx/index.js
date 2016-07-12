@@ -1,7 +1,8 @@
 var path =require('path')
-var util =require('./libs/util.js')
-var wechat_file=path.join(__dirname,'./config/wechat.txt')
-var wechat_ticket_file=path.join(__dirname,'./config/wechat_ticket.txt')
+var util =require('../libs/util.js')
+var Wechat = require('../wechat/wechat.js')
+var wechat_file=path.join(__dirname,'../config/wechat.txt')
+var wechat_ticket_file=path.join(__dirname,'../config/wechat_ticket.txt')
 var config= {
 	wechat:{
 		appID:'wx2ab2cbb86fe1cdec',
@@ -23,4 +24,8 @@ var config= {
 		}
 	}
 }
-module.exports=config
+exports.wechatOptions = config
+exports.getWechat=function(){
+  var wechatApi = new Wechat (config.wechat)
+  return wechatApi
+}
